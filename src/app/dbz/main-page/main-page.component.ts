@@ -8,7 +8,7 @@ import { Personaje } from '../interface/dbz.interface';
 })
 export class MainPageComponent implements OnInit {
 
-  personajes : Personaje[] = [
+  listaPersonajes : Personaje[] = [
     {
       nombre: 'Goku',
       poder: 10000
@@ -23,11 +23,18 @@ export class MainPageComponent implements OnInit {
     }
   ]
   
-  nuevo: Personaje = {
+  nuevoPersonaje: Personaje = {
     nombre: 'Maestro Roshi',
     poder: 2000
   } 
   
+
+agregarNuevoPersonaje(argumento: Personaje){
+  console.log(argumento);
+  this.listaPersonajes.push(argumento)
+  
+}
+
   constructor() { }
 
   ngOnInit(): void {
